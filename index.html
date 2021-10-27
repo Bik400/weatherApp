@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="weather-h1">Weather App</h1>
+    </header>
+    <div class="content">
+        <form class="form1">
+            <p>What's the weather like in your city?</p>
+            <label for="cname" id="city-label">Enter a city:</label>
+            <input type="text" id="city-input">
+            <div id="radio-div">
+                <input type="radio" id="farenheit-input" value="farenheit" name="temp" checked>
+                <label for="farenheit-input">Farenheit</label>
+                
+                <input type="radio" id="celsius-input" value="celsius" name="temp">
+                <label for="celsius-input">Celsius</label>
+                
+                <input type="radio" id="kelvin-input" value="kelvin" name="temp">
+                <label for="kelvin-input">Kelvin</label>
+            </div>
+            <button type="submit" value="Submit" id="submit-btn">Submit</button>
+        </form>
+        <div id="api-content"></div>
+    </div>
+</body>
+</html>
