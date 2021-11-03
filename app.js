@@ -5,8 +5,10 @@ const cityInput = document.getElementById("city-input");
 const weatherForm = document.querySelector("form");
 const farenheitInput = document.getElementById("farenheit-input");
 const celsiusInput = document.getElementById("celsius-input");
+const submitButton = document.getElementById("submit-btn");
 
-weatherForm.addEventListener("submit", onSubmit);
+// weatherForm.addEventListener("submit", onSubmit);
+submitButton.addEventListener("click", onSubmit);
 
 async function handleAPI() {
     try{
@@ -17,10 +19,6 @@ async function handleAPI() {
         console.log(err);
         alert("Please enter a city name");
     }
-}
-
-function something() {
-    console.log("i clicked the delete button");
 }
 
 function showWeather(data) {
@@ -51,6 +49,8 @@ function showWeather(data) {
     newDiv.append(deleteEntry);
     
     contentDiv.append(newDiv);
+
+    cityInput.value = "";
 }
 
 function deleteEntryValue(e) {
