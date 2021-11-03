@@ -10,7 +10,6 @@ body {
 }
 
 header {
-    /* color: #f5f5dc; */
     color: #F6D7A7;
 }
 
@@ -75,15 +74,10 @@ header {
 #api-content {
     display: flex;
     justify-content: center;
-    /* justify-content:flex-start; */
-    /* background-color: lightblue; */
     text-align: center;
     align-items: center;
     width: auto;
     margin-top: 5rem;
-    /* margin-right: 5rem; */
-    /* margin-bottom: 5rem; */
-    /* margin-left: 10rem; */
 }
 
 .contentDiv {
@@ -97,6 +91,7 @@ header {
     padding: 0.5rem;
     border-radius: 10px;
     box-shadow: 5px 2px 2px #000;
+    position: relative;
 }
 
 
@@ -112,3 +107,19 @@ header {
     margin-left: 1rem;
 }
 
+.delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-trash {
+    color: lightcoral;
+    pointer-events: none;
+}

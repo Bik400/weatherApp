@@ -13,11 +13,14 @@ async function handleAPI() {
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=${checkTempUnits()}&appid=${API_KEY}`);
         const weatherData = await response.json();
         showWeather(weatherData);  
-        console.log(weatherData);
      } catch(err) {
         console.log(err);
         alert("Please enter a city name");
     }
+}
+
+function something() {
+    console.log("i clicked the delete button");
 }
 
 function showWeather(data) {
@@ -36,12 +39,26 @@ function showWeather(data) {
     const descriptionP = document.createElement("p");
     descriptionP.innerText = data.weather[0].description;
 
+    const deleteEntry = document.createElement("button");
+    deleteEntry.innerHTML = "<i class='fas fa-trash'></i>";
+    deleteEntry.classList.add("delete-btn");
+    deleteEntry.addEventListener("click", deleteEntryValue);
+
     newDiv.append(cityP);
     newDiv.append(tempP);
     newDiv.append(tempFeelsLike);
     newDiv.append(descriptionP);
+    newDiv.append(deleteEntry);
     
     contentDiv.append(newDiv);
+}
+
+function deleteEntryValue(e) {
+    item = e.target;
+    if (item.classList.contains("delete-btn")) {
+        const entryValue = item.parentElement;
+        entryValue.remove();
+    }
 }
 
 function checkTempUnits() {
@@ -57,11 +74,6 @@ function checkTempUnits() {
     return units;
 }
 
-// function to clear form inputs
-function clearInput() {
-    cityInput.value = "";
-}
-
 function capitalizeCity(city) {
   const words = city.split(" ");
   return words.map((word) => {
@@ -72,7 +84,6 @@ function capitalizeCity(city) {
 function onSubmit(e) {
     handleAPI();
     e.preventDefault();
-    // cityInput.value = "";
 }
 
 
