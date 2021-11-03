@@ -2,12 +2,10 @@ const API_KEY = "06081a32f6e5b116de9f067939e5e523";
 
 const contentDiv = document.getElementById("api-content");
 const cityInput = document.getElementById("city-input");
-const weatherForm = document.querySelector("form");
 const farenheitInput = document.getElementById("farenheit-input");
 const celsiusInput = document.getElementById("celsius-input");
 const submitButton = document.getElementById("submit-btn");
 
-// weatherForm.addEventListener("submit", onSubmit);
 submitButton.addEventListener("click", onSubmit);
 
 async function handleAPI() {
